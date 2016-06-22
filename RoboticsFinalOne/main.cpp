@@ -5,12 +5,15 @@
  *
  */
 
-
+#include <iostream>
+#include <cmath>
 #include "pngUtil.h"
 
+using namespace std;
 
 int main() {
 
-	blowMap("roboticLabMap.png", 2.5, 30);
+	thickenMap("roboticLabMap.png",  3);
+	std::cout << "did it" << endl;
 }
 

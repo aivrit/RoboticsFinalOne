@@ -14,5 +14,6 @@ void decodeOneStep(const char* filename);
 void ConvertMapBlackToWhiteAndWhiteToBlack(const char* filename);
 void blowMap(const char* filename, double mapResolution, double robotSize);
 void shit();
+void thickenMap(const char* filename, int thickenSizeCM);
 
 #endif /* PNGUTIL_H_ */

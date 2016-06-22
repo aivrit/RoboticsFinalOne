@@ -121,3 +121,52 @@ void blowMap(const char* filename, double mapResolution, double robotSize)
 
 		encodeOneStep("newMap.png", navImage, width, height);
 }
+
+void thickenMap(const char* filename, int thickenSizeCM) {
+
+	std::vector<unsigned char> image; //the raw pixels
+	unsigned width, height;
+	int x, y;
+	int i, j;
+	//decode
+	unsigned error = lodepng::decode(image, width, height, filename);
+
+	//if there's an error, display it
+	if (error)
+		std::cout << "decoder error " << error << ": "
+		<< lodepng_error_text(error) << std::endl;
+
+	std::vector<unsigned char> newImage; //the raw pixels
+
+	newImage.resize(width * height * 4);
+
+	// Initializing thick map
+	for (y = 0; y < height; y++)
+		for (x = 0; x < width; x++) {
+			newImage[y * width * 4 + x * 4 + 0] = 255;
+			newImage[y * width * 4 + x * 4 + 1] = 255;
+			newImage[y * width * 4 + x * 4 + 2] = 255;
+			newImage[y * width * 4 + x * 4 + 3] = 255;
+		}
+
+	// thickening map
+	for (y = 0; y < height; y++)
+		for (x = 0; x < width; x++) {
+			if (!(image[y * width * 4 + x * 4 + 0]
+			            || image[y * width * 4 + x * 4 + 1]
+			                     || image[y * width * 4 + x * 4 + 2])){
+				for (i = y - thickenSizeCM; i <= y + thickenSizeCM; i++){
+					for (j = x - thickenSizeCM; j <= x + thickenSizeCM; j++){
+						if ((i>=0)&&(j>=0)&&(i<height)&&(j<width)){
+							newImage[i * width * 4 + j * 4 + 0] = 0;
+							newImage[i * width * 4 + j * 4 + 1] = 0;
+							newImage[i * width * 4 + j * 4 + 2] = 0;
+						}
+					}
+				}
+			}
+		}
+
+	// saving pic
+	encodeOneStep("newMap.png", newImage, width, height);
+}
