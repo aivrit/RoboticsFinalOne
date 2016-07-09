@@ -25,5 +25,19 @@ const double PARTICLE_DEC_DIS_PROB_UNIT = 0.2;
 const double PARTICLE_DEC_YAW_PROB_UNIT = 3.14 / 6;
 const double MIN_PROB_UNIT = 0.01;
 const int    MAX_LASER_RANGE = 240;
+const int    MAX_LASER_INDEX = 683;
+const int    LASER_DEVIATION_UNIT_PIXELS = 3;
+
+int resss= 2.5;
+static double laserIndexToAngle(int index)
+{
+	return index * ((double)MAX_LASER_RANGE / MAX_LASER_INDEX);
+}
+
+static int meterToPixel(double meter)
+{
+	return (meter * 100 / resss - 60);
+}
+
 
 #endif /* GLOBAL_H_ */
