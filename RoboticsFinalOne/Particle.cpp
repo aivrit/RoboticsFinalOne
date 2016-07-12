@@ -22,8 +22,6 @@
 
 	double Particle::probByMeasure(double* lp_readings)
 	{
-		double missesCount = 0;
-		double hitsCount = 0;
 		bool   isObsHit = false;
 		double currYaw = DTOR(this->_location->yaw);
 		int map[300][300];
@@ -43,7 +41,7 @@
 				int currXloc= this->_location->x +  (j * cos(currYaw + laserAngle));
 				int currYloc = this->_location->y +  (j * sin(currYaw + laserAngle));
 
-
+				// TODO:
 				// if out of bounds, do nothing (might be because of laser deviation add)
 				if (currXloc > 300|| currYloc > 300) {
 
@@ -80,7 +78,7 @@
 
 	void Particle::update(int dx, int dy, double dyaw, double* lp_readings)
 	{
-
+		this->_belief
 	}
 
 	double Particle::probByMove(int dx, int dy, double dyaw)
