@@ -9,6 +9,8 @@
 #include <cmath>
 #include "pngUtil.h"
 #include "GuiConnectionManager.h"
+#include "RobotParams.h"
+#include "Global.h"
 #include <libplayerc++/playerc++.h>
 
 using namespace std;
@@ -16,6 +18,8 @@ using namespace PlayerCc;
 
 
 int main() {
+
+	RobotParams* p = RobotParams::Instance();
 
 	PlayerClient* _pc = new PlayerClient("localhost", 6665);
 	Position2dProxy* _pp = new Position2dProxy(_pc);

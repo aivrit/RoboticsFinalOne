@@ -78,7 +78,7 @@
 
 	void Particle::update(int dx, int dy, double dyaw, double* lp_readings)
 	{
-		this->_belief
+
 	}
 
 	double Particle::probByMove(int dx, int dy, double dyaw)
