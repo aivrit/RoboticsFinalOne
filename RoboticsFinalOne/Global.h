@@ -28,7 +28,7 @@ const int    MAX_LASER_RANGE = 240;
 const int    MAX_LASER_INDEX = 683;
 const int    LASER_DEVIATION_UNIT_PIXELS = 3;
 
-int resss= 2.5;
+
 static double laserIndexToAngle(int index)
 {
 	return index * ((double)MAX_LASER_RANGE / MAX_LASER_INDEX);
@@ -36,7 +36,7 @@ static double laserIndexToAngle(int index)
 
 static int meterToPixel(double meter)
 {
-	return (meter * 100 / resss - 60);
+	return (meter * 100 / 2.5 - 60);
 }
 
 
