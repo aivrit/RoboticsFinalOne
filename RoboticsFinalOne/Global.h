@@ -27,7 +27,7 @@ const double MIN_PROB_UNIT = 0.01;
 const int    MAX_LASER_RANGE = 240;
 const int    MAX_LASER_INDEX = 683;
 const int    LASER_DEVIATION_UNIT_PIXELS = 3;
-
+const int    NORMALIZATION_FACTOR = 1.2;
 
 static double laserIndexToAngle(int index)
 {

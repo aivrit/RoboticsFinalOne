@@ -78,12 +78,29 @@
 
 	void Particle::update(int dx, int dy, double dyaw, double* lp_readings)
 	{
-		this->_belief
+		double temp = this->_belief * probByMove(dx,dy,dyaw);
+		temp *= (NORMALIZATION_FACTOR * probByMeasure(lp_readings));
+
+		this->_belief = temp;
+
+		this->move(dx,dy,dyaw);
+	}
+
+	void Particle::move(int dx, int dy, double dyaw)
+	{
+		this->_location->x += dx;
+		this->_location->y += dy;
+		this->_location->yaw += dyaw;
 	}
 
 	double Particle::probByMove(int dx, int dy, double dyaw)
 	{
 		double result = 1;
+
+		// handle negative moves (convert to positive for calculation)
+		dx = (dx < 0 ? -dx : dx);
+		dy = (dy < 0 ? -dy : dy);
+		dyaw = (dyaw < 0 ? -dyaw : dyaw);
 
 		// Return probability for the particle after move of dx
 		if(PARTICLE_DEC_DIS_PROB_UNIT < dx)

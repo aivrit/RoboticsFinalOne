@@ -14,6 +14,7 @@ Robot::Robot(char* host, int port)
 	this->_lp = new LaserProxy(this->_pc);
 	this->_pp = new Position2dProxy(this->_pc);
 	this->_laserRanges = new double[MAX_LASER_RANGE];
+	this->_loc->x = this->_pp->
 }
 
 double* Robot::GetLaserRanges()

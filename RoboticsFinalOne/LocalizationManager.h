@@ -28,6 +28,7 @@ class LocalizationManager
 	void update(int dx, int dy, double dyaw, double* lp_reads);
 	void generateParticles(Particle* particle);
 	list<Particle*>::iterator deleteParticle(list<Particle*>::iterator it);
+	Particle* getTopParticle();
 
 };
 

@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cmath>
 #include "pngUtil.h"
+#include "LocalizationManager.h"
 #include "GuiConnectionManager.h"
 #include <libplayerc++/playerc++.h>
 
@@ -20,8 +21,10 @@ int main() {
 	PlayerClient* _pc = new PlayerClient("localhost", 6665);
 	Position2dProxy* _pp = new Position2dProxy(_pc);
 	LaserProxy* _lp = new LaserProxy(_pc);
+	Robot*      _rob = new Robot("localhost", 6665);
+	LocalizationManager* lm = new LocalizationManager(_rob);
 
-
+	lm->
 	thickenMap("roboticLabMap.png",  3);
 	std::cout << "did it" << endl;
 

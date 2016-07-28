@@ -61,6 +61,28 @@ void LocalizationManager::generateParticles(Particle* particle)
 		}
 	}
 
+	Particle* LocalizationManager::getTopParticle()
+	{
+		double currMaxBelief = 0;
+		Particle* currMaxParticle;
+
+		// Run on all particles
+		for (list<Particle*>::iterator it = this->_particles.begin(); it!=this->_particles.end(); it++)
+		{
+			Particle* currParticle = *it;
+
+			// Check if current is bigger than max
+			if (currParticle->_belief > currMaxBelief)
+			{
+					currMaxBelief = currParticle->_belief;
+					currMaxParticle = currParticle;
+			}
+		}
+
+		// TODO: verify
+		return currMaxParticle;
+	}
+
 
 
 

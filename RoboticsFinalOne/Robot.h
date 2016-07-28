@@ -25,6 +25,7 @@ class Robot
 		PlayerClient*    _pc;
 		Position2dProxy* _pp;
 		LaserProxy*      _lp;
+		Location*         _loc;
 	private:
 		double*          _laserRanges;
 

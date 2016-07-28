@@ -24,7 +24,7 @@ public:
 	void update(int dx, int dy, double dyaw, double* lp_readings);
 	double probByMeasure(double* lp_readings);
 	double probByMove(int dx, int dy, double dyaw);
-
+	void move(int dx, int dy, double dyaw);
 };
 
 
