@@ -20,7 +20,7 @@ WaypointsManager::~WaypointsManager() {
 }
 
 // Creates the waypoint from the path, a way point will be created in a corner or every 4 cells of the map
-Waypoint* WaypointsManager::createWaypoints(vector<Position*> positionArray)
+Waypoint* WaypointsManager::createWaypoints(vector<Location*> LocationArray)
 {
 	int numberOfCells = 0;
 	int* currentWay;
@@ -28,21 +28,21 @@ Waypoint* WaypointsManager::createWaypoints(vector<Position*> positionArray)
 	Waypoint* waypoint;
 
 	// First way point will be the first cell of the path
-	waypoint = new Waypoint(positionArray[0]->col, positionArray[0]->row);
+	waypoint = new Waypoint(LocationArray[0]->col, LocationArray[0]->row);
 	firstWaypoint = waypoint;
-	currentWay = getWay(positionArray[0], positionArray[1]);
+	currentWay = getWay(LocationArray[0], LocationArray[1]);
 
 
 
-	// Go over all the positions
-	for (int i = 1; i < positionArray.size() - 1; i++)
+	// Go over all the Locations
+	for (int i = 1; i < LocationArray.size() - 1; i++)
 	{
-		int* nextWay = getWay(positionArray[i], positionArray[i + 1]);
+		int* nextWay = getWay(LocationArray[i], LocationArray[i + 1]);
 
-		// Check if the way is changed (corner). Also check if it is the fourth position
+		// Check if the way is changed (corner). Also check if it is the fourth Location
 		if (currentWay[0] !=  nextWay[0] || currentWay[1] != nextWay[1] || numberOfCells == 4)
 		{
-			waypoint->nextWaypoint = new Waypoint(positionArray[i]->col, positionArray[i]->row);
+			waypoint->nextWaypoint = new Waypoint(LocationArray[i]->col, LocationArray[i]->row);
 			waypoint = waypoint->nextWaypoint;
 			numberOfCells = 0;
 		}
@@ -54,14 +54,14 @@ Waypoint* WaypointsManager::createWaypoints(vector<Position*> positionArray)
 
 
 
-	// The last position of the path is a waypoint
-	waypoint->nextWaypoint = new Waypoint(positionArray[positionArray.size() - 1]->col,
-			positionArray[positionArray.size() - 1]->row);
+	// The last Location of the path is a waypoint
+	waypoint->nextWaypoint = new Waypoint(LocationArray[LocationArray.size() - 1]->col,
+			LocationArray[LocationArray.size() - 1]->row);
 
 	return firstWaypoint;
 }
 
-int* WaypointsManager::getWay(Position* current, Position* next)
+int* WaypointsManager::getWay(Location* current, Location* next)
 {
 	int* way = new int[2];
 	way[0] = current->row - next->row;

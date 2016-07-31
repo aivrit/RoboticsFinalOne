@@ -8,7 +8,7 @@
 #ifndef WAYPOINTSMANGER_H_
 #define WAYPOINTSMANGER_H_
 
-#include "../A-Star/Position.h"
+#include "../A-Star/Location.h"
 #include "Waypoint.h"
 #include "stdlib.h"
 #include <vector>
@@ -23,8 +23,8 @@ private:
 public:
 	WaypointsManager(int w, int h, double r);
 	virtual ~WaypointsManager();
-	Waypoint* createWaypoints(vector<Position*> positionArray);
-	int* getWay(Position* current, Position* next);
+	Waypoint* createWaypoints(vector<Location*> LocationArray);
+	int* getWay(Location* current, Location* next);
 	float getXFromCol(int col);
 	float getYFromRow(int row);
 };

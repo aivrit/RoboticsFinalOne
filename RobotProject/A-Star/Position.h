@@ -1,18 +1,18 @@
 /*
- * Position.h
+ * Location.h
  *
  *  Created on: Jun 20, 2015
  *      Author: colman
  */
 
-#ifndef POSITION_H_
-#define POSITION_H_
+#ifndef Location_H_
+#define Location_H_
 
-class Position {
+class Location {
 public:
-	Position(int row, int col);
-	virtual ~Position();
+	Location(int row, int col);
+	virtual ~Location();
 	int row, col;
 };
 
-#endif /* POSITION_H_ */
+#endif /* Location_H_ */

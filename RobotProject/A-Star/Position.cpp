@@ -1,19 +1,19 @@
 /*
- * Position.cpp
+ * Location.cpp
  *
  *  Created on: Jun 20, 2015
  *      Author: colman
  */
 
-#include "Position.h"
+#include "Location.h"
 
-Position::Position(int row, int col) {
+Location::Location(int row, int col) {
 	// TODO Auto-generated constructor stub
 	this->row = row;
 	this->col = col;
 }
 
-Position::~Position() {
+Location::~Location() {
 	// TODO Auto-generated destructor stub
 }
 

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Position.h"
+#include "Location.h"
 #include <stdlib.h>
 
 #ifndef POINT_H_
@@ -12,7 +12,7 @@ public:
 	int y, x, g, h, f;
 	bool closed, opened, walkable;
 	Point* parent;
-	Position* getPosition();
+	Location* getLocation();
 	Point* getParent();
 	void setParent(Point *p);
 	int getX();

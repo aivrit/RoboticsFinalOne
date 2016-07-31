@@ -130,7 +130,7 @@ double Particle::calcObservationsAccuracy(Robot* robot)
 		freeCellsToObstacle(obstacleXPos, obstacleYPos, disFromObstacle);
 	}
 
-	// Set free in the particle's position
+	// Set free in the particle's Location
 	_map->setMapValueFromRealLocation(_xPos, _yPos, FREE_CELL);
 
 	return numOfWrongMapCells == 0 ? 1 : (numOfRightMapCells / (numOfRightMapCells + numOfWrongMapCells));

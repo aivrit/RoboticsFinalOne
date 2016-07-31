@@ -17,7 +17,7 @@ private:
 public:
 	AStar(Map* map);
 	virtual ~AStar();
-	vector<Position*> findPath(int rowStart, int colStart, int rowEnd, int colEnd);
+	vector<Location*> findPath(int rowStart, int colStart, int rowEnd, int colEnd);
 
 };
 

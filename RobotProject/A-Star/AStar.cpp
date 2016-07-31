@@ -30,9 +30,9 @@ AStar::AStar(Map* map) {
 AStar::~AStar() {
 }
 
-vector<Position*> AStar::findPath(int rowStart, int colStart, int rowEnd, int colEnd)
+vector<Location*> AStar::findPath(int rowStart, int colStart, int rowEnd, int colEnd)
 {
-    vector<Position*> path;
+    vector<Location*> path;
 
     // Define points to work with
     Point *start = pointsMap[rowStart][colStart];
@@ -153,12 +153,12 @@ vector<Position*> AStar::findPath(int rowStart, int colStart, int rowEnd, int co
     // Resolve the path starting from the end point
     while (current->hasParent() && current != start)
     {
-        path.push_back(current->getPosition());
+        path.push_back(current->getLocation());
         current = current->getParent();
         n ++;
     }
 
-    vector<Position*> fromStart;
+    vector<Location*> fromStart;
     for (int i = path.size() - 1; i >= 0; i--)
     {
     	fromStart.push_back(path[i]);

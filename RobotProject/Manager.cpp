@@ -157,11 +157,11 @@ void Manager::run()
 		newYaw = _Robot->getYaw();
 
 		// Use some noise to simulate real world wrong reads.
-		newX = newX + ((double) rand() / (RAND_MAX)) * 2 * NOISE_POSITION_FACTOR - NOISE_POSITION_FACTOR;
-		newY = newY + ((double) rand() / (RAND_MAX)) * 2 * NOISE_POSITION_FACTOR - NOISE_POSITION_FACTOR;
+		newX = newX + ((double) rand() / (RAND_MAX)) * 2 * NOISE_Location_FACTOR - NOISE_Location_FACTOR;
+		newY = newY + ((double) rand() / (RAND_MAX)) * 2 * NOISE_Location_FACTOR - NOISE_Location_FACTOR;
 		//newYaw = newYaw + ((double) rand() / (RAND_MAX)) * 2 * NOISE_YAW_FACTOR - NOISE_YAW_FACTOR;
 
-		cout << "Robot's position: " << newX << ", " << newY << ", " << newYaw << endl;
+		cout << "Robot's Location: " << newX << ", " << newY << ", " << newYaw << endl;
 
 		// Update particles and printing the map
 		_slam->update(newX - prevX, newY - prevY, newYaw - prevYaw);
@@ -223,11 +223,11 @@ void Manager::run()
 			newYaw = _Robot->getYaw();
 
 			// Use some noise to simulate real world wrong reads.
-			newX = newX + ((double) rand() / (RAND_MAX)) * 2 * NOISE_POSITION_FACTOR - NOISE_POSITION_FACTOR;
-			newY = newY + ((double) rand() / (RAND_MAX)) * 2 * NOISE_POSITION_FACTOR - NOISE_POSITION_FACTOR;
+			newX = newX + ((double) rand() / (RAND_MAX)) * 2 * NOISE_Location_FACTOR - NOISE_Location_FACTOR;
+			newY = newY + ((double) rand() / (RAND_MAX)) * 2 * NOISE_Location_FACTOR - NOISE_Location_FACTOR;
 			//newYaw = newYaw + ((double) rand() / (RAND_MAX)) * 2 * NOISE_YAW_FACTOR - NOISE_YAW_FACTOR;
 
-			cout << "Robot's position: " << newX << ", " << newY << ", " << newYaw << endl;
+			cout << "Robot's Location: " << newX << ", " << newY << ", " << newYaw << endl;
 
 			// Update particles and printing the map
 			_slam->update(newX - prevX, newY - prevY, newYaw - prevYaw);

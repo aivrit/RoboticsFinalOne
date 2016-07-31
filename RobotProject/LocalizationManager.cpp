@@ -71,7 +71,7 @@ void LocalizationManager::update(double deltaX, double deltaY, double deltaYaw)
 		}
 	}
 
-	cout << "Print position In array bestPartical: " << IndexBestParti << endl;
+	cout << "Print Location In array bestPartical: " << IndexBestParti << endl;
 	// Save the best particle
 	_bestParticle = bestParticle;
 }

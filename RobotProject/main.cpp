@@ -34,7 +34,7 @@ int main() {
 
 	AStar* astar = new AStar(&map);
 
-	vector<Position*> path = astar->findPath(robotStartLocation[1]/4,
+	vector<Location*> path = astar->findPath(robotStartLocation[1]/4,
 												 robotStartLocation[0]/4,
 												 goalLocation[1]/4,
 												 goalLocation[0]/4);

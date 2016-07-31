@@ -31,9 +31,9 @@ Point::Point(int x, int y, bool w)
 	f = g = h = 0;
 }
 
-Position* Point::getPosition()
+Location* Point::getLocation()
 {
-    return new Position(x, y);
+    return new Location(x, y);
 }
 
 Point* Point::getParent()
