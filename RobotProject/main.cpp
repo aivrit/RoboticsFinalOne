@@ -21,7 +21,7 @@ using namespace PlayerCc;
 int main() {
 
 	// Init map
-	ConfigurationManager config("/home/user/workspace/HelloRobot/Config/parameters.txt");
+	ConfigurationManager config("/home/colman/git/RoboticsFInalOne/RobotProject/Config/parameters.txt");
 	Map map = CreateMap(config);
 
 	// Put robot on map
