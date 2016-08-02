@@ -1,9 +1,9 @@
 #ifndef MANAGER_H_
 #define MANAGER_H_
-#include "Models/Robot.h"
+#include "Robot.h"
 #include "Map/Map.h"
 #include "LocalizationManager.h"
-#include "A-Star/AStar.h"
+#include "AStar.h"
 #include "Waypoints/WaypointsManager.h"
 
 // Noise to simulate real world wrong reads.

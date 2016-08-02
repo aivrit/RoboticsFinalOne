@@ -121,10 +121,6 @@ Map CreateMap(ConfigurationManager config)
 		}
 	}
 
-	//printMap(map, height + 6, width + 6);
-	printMap(mapBlow, newMapHieght, newMapWidth);
-	printMap(newMap, newMapHieght + sizeH, newMapWidth + sizeW);
-	//printMap(finalMap, newMapHieght + 2, newMapWidth + 2);
 
 	return Map(finalMap, newMapHieght + 2, newMapWidth  + 2, gridResoultion / 100);
 }

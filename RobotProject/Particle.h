@@ -9,8 +9,8 @@
 
 #include "Consts.h"
 #include "Particle.h"
-#include "./Models/Robot.h"
-#include "./Map/Map.h"
+#include "Robot.h"
+#include "Map/Map.h"
 
 class Particle
 {

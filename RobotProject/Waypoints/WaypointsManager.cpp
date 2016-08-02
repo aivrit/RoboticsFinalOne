@@ -67,7 +67,6 @@ int* WaypointsManager::getWay(Location* current, Location* next)
 	way[0] = current->row - next->row;
 	way[1] = current->col - next ->col;
 
-	cout << "[" << way[0] << "," << way[1] << "]" <<endl;
 	return way;
 }
 

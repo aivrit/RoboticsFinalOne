@@ -8,11 +8,11 @@
 #include <libplayerc++/playerc++.h>
 #include "ConfigurationManager.h"
 #include "MapLoader/MapLoader.h"
-#include "A-Star/AStar.h"
+#include "AStar.h"
 #include "Waypoints/Waypoint.h"
 #include "Waypoints/WaypointsManager.h"
 #include "Manager.h"
-#include "Models/Robot.h"
+#include "Robot.h"
 
 
 using namespace PlayerCc;
@@ -26,11 +26,9 @@ int main() {
 
 	// Put robot on map
 	double* robotStartLocation = config.getStartLocation();
-	//map.setMapValueFromRealLocation(robotStartLocation[0], robotStartLocation[1], ROBOT_CELL);
 
 	// Put goal on map
 	double* goalLocation = config.getGoal();
-	//map.setMapValueFromRealLocation(goalLocation[0], goalLocation[1], GOAL_CELL);
 
 	AStar* astar = new AStar(&map);
 
@@ -40,36 +38,23 @@ int main() {
 												 goalLocation[0]/4);
 
 
-	for(int i = 0; i < path.size(); i++)
-	{
-		map.setMapValue(path[i]->row, path[i]->col, 'P');
-	}
-
-
-	map.setMapValue(robotStartLocation[1]/4, robotStartLocation[0]/4, 'R');
-	map.setMapValue(goalLocation[1]/4, goalLocation[0]/4, 'E');
-
-	map.printMap();
-
 	// Create waypoints
-	double x = config.getGridResolutionCM();
-	x = x / 100;
-	WaypointsManager waypointsManager(map.getMapWidth(), map.getMapHeight(), x);
+	double gridResMeters = config.getGridResolutionCM() / 100;
+	WaypointsManager waypointsManager(map.getMapWidth(), map.getMapHeight(), gridResMeters);
 	Waypoint* startWaypoint = waypointsManager.createWaypoints(path);
-	Waypoint* firstRealWaypoint = startWaypoint;
 
 	// Robot
-	Robot robot("10.10.245.63",6665);
+	Robot robot("localhost",6665);
 
 	robot.setOdometry(robotStartLocation[0]/40, robotStartLocation[1]/-40, robotStartLocation[2] / 180 * PI);
 
-		LocalizationManager* slam = new LocalizationManager(&robot, map.getMapHeight(), map.getMapWidth(), map.getMapResolution());
-		slam->setRobot(&robot);
+		LocalizationManager* lm = new LocalizationManager(&robot, map.getMapHeight(), map.getMapWidth(), map.getMapResolution());
+		lm->setRobot(&robot);
 
 
-		slam->initFirstParticle(&map,robotStartLocation[0]/40, robotStartLocation[1]/-40, robotStartLocation[2]);
+		lm->initFirstParticle(&map,robotStartLocation[0]/40, robotStartLocation[1]/-40, robotStartLocation[2]);
 
-		Manager manager(&robot, slam, firstRealWaypoint, &map, robotStartLocation[0]/4, robotStartLocation[1]/4, robotStartLocation[2]);
+		Manager manager(&robot, lm, startWaypoint, &map, robotStartLocation[0]/4, robotStartLocation[1]/4, robotStartLocation[2]);
 		manager.run();
 
 	return 0;

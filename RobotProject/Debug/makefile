@@ -9,10 +9,8 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Waypoints/subdir.mk
--include Models/subdir.mk
 -include MapLoader/subdir.mk
 -include Map/subdir.mk
--include A-Star/subdir.mk
 -include subdir.mk
 -include objects.mk
 

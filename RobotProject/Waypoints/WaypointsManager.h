@@ -8,7 +8,7 @@
 #ifndef WAYPOINTSMANGER_H_
 #define WAYPOINTSMANGER_H_
 
-#include "../A-Star/Location.h"
+#include "../Location.h"
 #include "Waypoint.h"
 #include "stdlib.h"
 #include <vector>

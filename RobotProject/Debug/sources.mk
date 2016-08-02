@@ -25,8 +25,6 @@ C_UPPER_DEPS :=
 SUBDIRS := \
 . \
 Waypoints \
-Models \
 MapLoader \
 Map \
-A-Star \
 

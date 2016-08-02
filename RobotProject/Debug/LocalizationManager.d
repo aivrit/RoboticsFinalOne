@@ -1,5 +1,5 @@
 LocalizationManager.d: ../LocalizationManager.cpp \
- ../LocalizationManager.h ../Particle.h ../Consts.h .././Models/Robot.h \
+ ../LocalizationManager.h ../Particle.h ../Consts.h ../Robot.h \
  /usr/local/include/player-2.0/libplayerc++/playerc++.h \
  /usr/local/include/player-2.0/libplayerc/playerc.h \
  /usr/local/include/player-2.0/libplayercore/player.h \
@@ -12,9 +12,9 @@ LocalizationManager.d: ../LocalizationManager.cpp \
  /usr/local/include/player-2.0/libplayerc++/playerc++config.h \
  /usr/local/include/player-2.0/libplayerc++/playerclient.h \
  /usr/local/include/player-2.0/libplayerc++/playererror.h \
- /usr/local/include/player-2.0/libplayerc++/clientproxy.h \
- .././Models/../Consts.h .././Map/Map.h .././Map/../Consts.h \
- .././Map/../MapLoader/lodepng.h .././Map/../MapLoader/MapInit.h
+ /usr/local/include/player-2.0/libplayerc++/clientproxy.h ../../Consts.h \
+ ../Map/Map.h ../Map/../Consts.h ../Map/../MapLoader/lodepng.h \
+ ../Map/../MapLoader/MapInit.h
 
 ../LocalizationManager.h:
 
@@ -22,7 +22,7 @@ LocalizationManager.d: ../LocalizationManager.cpp \
 
 ../Consts.h:
 
-.././Models/Robot.h:
+../Robot.h:
 
 /usr/local/include/player-2.0/libplayerc++/playerc++.h:
 
@@ -50,12 +50,12 @@ LocalizationManager.d: ../LocalizationManager.cpp \
 
 /usr/local/include/player-2.0/libplayerc++/clientproxy.h:
 
-.././Models/../Consts.h:
+../../Consts.h:
 
-.././Map/Map.h:
+../Map/Map.h:
 
-.././Map/../Consts.h:
+../Map/../Consts.h:
 
-.././Map/../MapLoader/lodepng.h:
+../Map/../MapLoader/lodepng.h:
 
-.././Map/../MapLoader/MapInit.h:
+../Map/../MapLoader/MapInit.h:

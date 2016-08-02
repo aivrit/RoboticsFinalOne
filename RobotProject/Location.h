@@ -5,8 +5,8 @@
  *      Author: colman
  */
 
-#ifndef Location_H_
-#define Location_H_
+#ifndef LOCATION_H_
+#define LOCATION_H_
 
 class Location {
 public:
@@ -15,4 +15,4 @@ public:
 	int row, col;
 };
 
-#endif /* Location_H_ */
+#endif /* LOCATION_H_ */

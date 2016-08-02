@@ -6,8 +6,8 @@
 #define MAX_PARTICLES_NUM 40
 
 #include "Particle.h"
-#include "./Models/Robot.h"
-#include "./Map/Map.h"
+#include "Robot.h"
+#include "Map/Map.h"
 #include "Consts.h"
 
 using namespace std;

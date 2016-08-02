@@ -4,9 +4,6 @@
 // Matrix chars
 #define FREE_CELL '0'
 #define BLOCK_CELL '1'
-#define ROBOT_CELL 'R'
-#define GOAL_CELL 'E'
-#define PATH_CELL 'P'
 
 #define PI 3.14159265
 

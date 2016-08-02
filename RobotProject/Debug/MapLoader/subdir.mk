@@ -27,4 +27,11 @@ MapLoader/%.o: ../MapLoader/%.cpp
 	@echo 'Finished building: $<'
 	@echo ' '
 
+MapLoader/MapLoader.o: /home/colman/git/RoboticsFInalOne/RobotProject/MapLoader/MapLoader.cpp
+	@echo 'Building file: $<'
+	@echo 'Invoking: GCC C++ Compiler'
+	g++ -I/usr/local/include/player-2.0 -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 

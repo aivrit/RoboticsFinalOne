@@ -17,13 +17,11 @@ main.d: ../main.cpp \
  ../MapLoader/../Map/Map.h ../MapLoader/../Map/../Consts.h \
  ../MapLoader/../Map/../MapLoader/lodepng.h \
  ../MapLoader/../Map/../MapLoader/MapInit.h \
- ../MapLoader/../ConfigurationManager.h ../A-Star/AStar.h \
- ../A-Star/../Map/Map.h ../A-Star/../Consts.h ../A-Star/Point.h \
- ../A-Star/Position.h ../Waypoints/Waypoint.h \
- ../Waypoints/WaypointsManager.h ../Waypoints/../A-Star/Position.h \
- ../Waypoints/Waypoint.h ../Manager.h ../Models/Robot.h \
- ../Models/../Consts.h ../Map/Map.h ../LocalizationManager.h \
- ../Particle.h .././Models/Robot.h .././Map/Map.h
+ ../MapLoader/../ConfigurationManager.h ../AStar.h ../../Map/Map.h \
+ ../../Consts.h ../Point.h ../Location.h ../Waypoints/Waypoint.h \
+ ../Waypoints/WaypointsManager.h ../Waypoints/../Location.h \
+ ../Waypoints/Waypoint.h ../Manager.h ../Robot.h ../Map/Map.h \
+ ../LocalizationManager.h ../Particle.h
 
 /usr/local/include/player-2.0/libplayerc++/playerc++.h:
 
@@ -71,36 +69,30 @@ main.d: ../main.cpp \
 
 ../MapLoader/../ConfigurationManager.h:
 
-../A-Star/AStar.h:
+../AStar.h:
 
-../A-Star/../Map/Map.h:
+../../Map/Map.h:
 
-../A-Star/../Consts.h:
+../../Consts.h:
 
-../A-Star/Point.h:
+../Point.h:
 
-../A-Star/Position.h:
+../Location.h:
 
 ../Waypoints/Waypoint.h:
 
 ../Waypoints/WaypointsManager.h:
 
-../Waypoints/../A-Star/Position.h:
+../Waypoints/../Location.h:
 
 ../Waypoints/Waypoint.h:
 
 ../Manager.h:
 
-../Models/Robot.h:
-
-../Models/../Consts.h:
+../Robot.h:
 
 ../Map/Map.h:
 
 ../LocalizationManager.h:
 
 ../Particle.h:
-
-.././Models/Robot.h:
-
-.././Map/Map.h:
